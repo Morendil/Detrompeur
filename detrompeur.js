@@ -7,7 +7,8 @@ var replacements = [
   ["timebox",["timebox","bo(.?)te de temps"]],
   ["backlog",["backlog","carnet de produit","carnet de sprint"]],
   ["sashimi",["dod","d(.?)finition de (.?)fini(.?)","d(.?)finition du (.?)done(.?)"]],
-  ["stories",["user stories"]],
+  ["stories",["user stories","user story"]],
+  ["refactoring",["refactoring","remaniement"]]
 ];
 var base = "http://referentiel.institut-agile.fr/";
 
