@@ -91,12 +91,15 @@ function finish2($) {
   var dictionary = function(m,d){return dictionaryLink(m,d,base)};
   wrapAll($,$("body *"),replacements,dictionary);
 
-  $("a.highlighted").each(function(){
+  all = $("a.highlighted");
+  all.each(function(){
     rel = $(this).attr("rel");
     where = $(this);
+    // instantiate separate scopes for "where"
+    (function(where,$) {
     $.getJSON("http://referentiel.institut-agile.fr/json.phtml?id="+rel+"&from="+escape(document.location)+"&jsonp=?",
       function(value) {
          where.qtip({content:$("div#desc",$(value)),style: { name:'cream', tip:'topLeft', width: { max: 550 } },hide: { delay:500, when: 'mouseout', fixed: true }});
-       });
+       });})(where,$);
   });
 }
