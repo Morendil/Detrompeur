@@ -1,5 +1,13 @@
 var replacements = [
-  ["iteration",["it(.?)ration(s*)","sprint"]]
+  ["iteration",["it(.?)ration(s*)","sprint"]],
+  ["incremental",["incr(.?)mental(e*)(s*)"]],
+  ["daily",["r(.?)union(s*) quotidienne(s*)","daily scrum(s*)"]],
+  ["heartbeatretro",["r(.?)trospective"]],
+  ["taskboard",["taskboard","task board","tableau des t(.?)ches"]],
+  ["timebox",["timebox","bo(.?)te de temps"]],
+  ["backlog",["backlog","carnet de produit","carnet de sprint"]],
+  ["sashimi",["dod","d(.?)finition de (.?)fini(.?)","d(.?)finition du (.?)done(.?)"]],
+  ["stories",["user stories"]],
 ];
 var base = "http://referentiel.institut-agile.fr/";
 
