@@ -1,0 +1,5 @@
+<?
+$which = $_GET['id'].'.html';
+$data = file_get_contents($which);
+echo $_GET['jsonp'] . "(unescape('" . rawurlencode($data) . "'));";
+?>
