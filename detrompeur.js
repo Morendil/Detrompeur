@@ -92,6 +92,7 @@ function finish2($) {
   var dictionary = function(m,d){return dictionaryLink(m,d,base)};
   wrapAll($,$("body *"),replacements,dictionary);
 
+  // This is all untested for now...
   all = $("a.highlighted");
   all.each(function(){
     rel = $(this).attr("rel");
@@ -100,7 +101,9 @@ function finish2($) {
     (function(where,$) {
     $.getJSON("http://referentiel.institut-agile.fr/json.phtml?id="+rel+"&from="+escape(document.location)+"&jsonp=?",
       function(value) {
-         where.qtip({content:$("div#desc",$(value)),style: { name:'cream', tip:'topLeft', width: { max: 550 } },hide: { delay:500, when: 'mouseout', fixed: true }});
+         var desc = $("div#desc",$(value));
+         $("a",desc).removeAttr("href");
+         where.qtip({content:desc,style: { name:'cream', tip:'topLeft', width: { max: 550 } },hide: { delay:500, when: 'mouseout', fixed: true }});
        });})(where,$);
   });
 }
